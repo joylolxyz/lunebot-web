@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charSet="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="https://cdn.discordapp.com/avatars/1177996413087514715/35164aeb73020ccbfa858a215689abb4.png?size=1024" />
+    <title>lune</title>
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="a multipurpose discord bot giving you the resources to create a unique community" />
+    <meta name="twitter:card" content="player cards" />
+    <meta name="twitter:site" content="https://lunebot.wtf" />
+    <meta property="og:title" content="lune" />
+    <meta content="#4b1218" data-react-helmet="true" name="theme-color">
+    <meta property="og:description" content="a multipurpose discord bot giving you the resources to create a unique community" />
+    <meta property="og:url" content="https://lunebot.wtf" />
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/1181624571309326346/1184542280242176110/6d8ea0cc7e436621bbbfe687f6c5c0c4.jpg?ex=658c59f7&is=6579e4f7&hm=5a7b9ad8860441ba70f1e62ca1dd06704b575b6609680eb60356943398b10947&" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="500" />
+    <meta property="og:image:height" content="500" />
+    <meta property="og:locale" content="en" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: black; 
+            color: white;
+        }
+        pre {
+            white-space: pre-wrap;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <pre>
+      //FEATURES//
+When a channel is nuked through the bot, all previously set information stays on this channel eg. welcome messages and disabled commands
+
+//KEYWORD ALIASES//
+Many commands listed will have keywords such as "add" here, aswell as many others. Aliases for each keyword are below this sentence. Example usage of this is if an example includes the keyword "add", such as "reactionrole add" you could use the aliases listed below, such as "reactionrole create"
+add  -- create, cre
+remove --  erase, delete, del
+show  --  reveal, rev
+
+//PUNISHMENTS AND PERMISSIONS//
+Single Trigger Punishments  --  kick, ban, strip, jail
+Multiple Trigger Punishments  --  lockdown
+
+
+
+
+
+
+
+
+//CORE//
+
+help  --  Displays a help menu for using the bot
+help <command>  --  Displays information about the desired command
+selfprefix <prefix>  --  Set your own prefix to be used across all guilds you share with the bot
+data request --  Request a package of your user data saved in the bots database formatted into a JSON file
+data reset  --  Reset all of your user data saved in the bots database
+feedback <sentence>  --  Send us your feedback about the bot
+suggest <sentence>  --  Write us a suggestion for the bot
+report <sentence>  --  Report an error or bug to us
+
+
+
+//GUILD//
+# command/cmd #
+# moderation/mod/fp/fakeperms #
+command enable <cmd_name>  --  Enables a command if it is currently disabled in the current channel
+command disable <cmd_name>  --  Disables a command if it is currently enabled in the current channel
+command list  --  Displays a list of the disabled commands in the current channel
+moderation add [role] <permission>  --  Assigns the role the desired permission to use through the bot, rather than through Discords built-in permission system
+moderation remove [role] <permission>  --  Removes the desired permission from the role
+moderation list  --  Displays a list of roles with permissions granted through the bot
+moderation confirm  --  Toggle whether high-level moderation commands ran require confirmation to use eg. ban, kick
+antimod [member]  --  Makes the desired member immune to moderation commands unless the member running the commands is an administrator
+server seticon <image>  --  Sets the server icon to the desired image
+server setbanner <image>  --  Sets the server banner to the desired image
+server setsplash <image>  --  Sets the server splash to the desired image
+reskin ???  --  Set the embed ??? to the desired ???
+
+
+
+//CHATGPT//
+
+gpt <question>  --  Ask ChatGPT a question
+
+
+
+//ALIASES//
+
+alias add <command> <alias>  --  Sets a new alias to the desired command, this alias will only work on the guild it is set in
+alias remove <alias>  --  Deletes the alias from the command it is associated with
+alias show <alias>  --  Displays the command associated with this alias
+alias reset  --  Deletes all aliases set in the guild
+alias list  --  Provides a list of commands with associated aliases set in the guild
+
+
+
+//ANTINUKE//
+# antinuke/an #
+
+antinuke toggle  --  Toggles if the antinuke is activated or not
+antinuke config  --  Displays the current antinuke configuration in the guild
+antinuke whitelist/wl [member]  -- Whitelists a member or bot from triggering the antinuke
+antinuke whitelists/wls  --  Displays a list of members that are whitelisted from triggering the antinuke
+antinuke admin [member]  --  Grants a member full authorization over the antinuke, allowing them to use all antinuke commands regardless of permissions
+antinuke bot  --  Toggles the ability for bots to be added to the server
+antinuke channel  -- Toggles if channel protection is activated or not
+antinuke category  --  Toggles if category protection is activated or not
+antinuke webhook  --  Toggles if webhook protection is activated or not
+antinuke role  --  Toggles if role protection is activated or not
+antinuke emoji  --  Toggles if emoji protection is activated or not
+antinuke channel <threshold> --  Sets the maximum amount of channels a member may delete/create before triggering the antinuke within an hour
+antinuke category <threshold> --  Sets the maximum amount of categories a member may delete/create before triggering the antinuke within an hour
+antinuke webhook <threshold> --  Sets the maximum amount of webhooks a member may delete/create before triggering the antinuke within an hour
+antinuke role <threshold> --  Sets the maximum amount of roles a member may delete/create before triggering the antinuke within an hour
+antinuke emoji <threshold> --  Sets the maximum amount of emojis a member may delete/create before triggering the antinuke within an hour
+antinuke punishment <punishment>  --  Sets the punishment for triggering the antinuke
+
+
+
+//ANTIRAID//
+# antiraid/ar #
+
+antiraid toggle  --  Toggles if the antiraid is activated or not
+antiraid config  --  Displays the current antiraid configuration in the guild
+antiraid allow [user]  --  Creates a one-time bypass for the user to join the guild without being punished by the antiraid
+antiraid whitelist/wl [member]  --  Whitelists a member or bot from triggering the antiraid
+antiraid whitelists/wls  --  Displays a list of members that are whitelisted from triggering the antiraid
+antiraid pfp  --  Toggles if users who join with the default discord profile picture are punished or not
+antiraid joins  --  Toggles if anti mass join is activated or not
+antiraid age  --  Toggles if young accounts are punished or not
+antiraid joins <threshold>  --  Sets the maximum amount of users that can join the guild within an hour
+antiraid age <days>  --  Sets the minimum age of a discord users account in days
+antiraid punishment single <punishment>  --  Sets the punishment for one user triggering the antiraid
+antiraid punishment multiple <punishment>  --  Sets the punishment for multiple users triggering the antiraid
+
+
+
+//MUSIC//
+
+music/m
+music play <song>  --  Joins the voice call you are currently in and plays the desired song
+music skip  --  Votes to skip the current song
+music forceskip  --  Forcefully skips the current song
+music shuffle  --  Shuffles the songs currently queued to play
+music queue  --  Displays the songs currently in queue
+music purge  --  Removes all songs from the queue that were requested by a user who left the voice channel
+music clear  -- Removes all songs from the queue
+music selfpurge  --  Removes all songs you requested from the queue
+music now  --  Displays the song that is currently playing
+music pause  --  Pauses the song which is currently playing
+music restart  --  Restarts the song which is currently playing
+music volume <volume>  --  Sets the volume of the bot (1-100)
+
+
+
+//INFO//
+
+roles  --  Display a list of all roles in the guild
+roles positions/pos  --  Dipslays a list of all roles in the guild alongside their position
+channels  --  Display a list of all channels in the guild
+channels positions/pos  --  Dipslays a list of all channels in the guild alongside their position
+category  --  Display a list of all categories in the guild
+category positions/pos  --  Dipslays a list of all categories in the guild alongside their position
+
+
+
+//EDIT//
+
+edit role name [role] <name>  --  Edits the roles name to the desired name
+edit role color/colour [role] <color>  --  Edits the roles color to the desired color
+edit role position/pos [role] <position>  --  Moves the role to the desired position
+edit role hoist/hoisted [role] --  Toggles if the role is hoisted or not
+edit role icon [role] <emoji>  --  Sets the roles icon to the desired emoji
+edit channel name [channel] <name>  --  Edits the roles name to the desired name
+edit channel position/pos [channel] <position>  --  Moves the channel to the desired position
+edit channel topic [channel] <topic> --  Set the topic for the channel
+edit channel bitrate [channel] <bitrate> --  Set the bitrate in the voice channel
+edit channel limit [channel] <amount> --  Set an amount of members who can join the voice channel
+edit channel sync [channel]  --  Syncs the channels permissions to the category it is inside
+edit category name [category] <name>  --  Edits the categories name to the desired name
+edit category position/pos [category] <position>  --  Moves the category to the desired position
+
+role/r [member] <role>  --  Assign a role to a member, unassigns it if they have the role
+forcerole/fr [member] <role>  --  Assign a role to a member and not allow it to be removed
+forcerole list  --  Display a list of roles forcefully assigned to members
+
+
+
+//FUN//
+
+compliment [member]  --  Compliment the desired member, or if no member is provided, compliment yourself!
+insult [member]  --  Insult the desired member, or if no member is provided, insult yourself!
+
+
+
+//CONVERSIONS//
+
+bmi <cm> <kg> <gender (m/f)>  --  Calculate the Body Mass Index of someone using the required information
+cm inch <inch>  --  Converts inches to centimeters
+cm feet <ft>  --  Converts feet to centimeters
+inch cm <cm>  --  Converts centimeters to inches
+inch feet <ft>  --  Converts feet to inches
+feet cm <cm>  --  Converts centimeters to feet
+feet inch <inch>  --  Converts inches to feet
+kg lbs <lbs>  --  Converts pounds to kilograms
+kg stone <stone>  --  Converts stone to kilograms
+kg ounce <ounce>  --  Converts ounces to kilograms
+lbs kg <kg>  --  Converts kilograms to pounds
+lbs stone <stone>  --  Converts stone to pounds
+lbs ounce <ounce>  --  Converts ounces to pounds
+stone lbs <lbs>  --  Converts pounds to stone
+stone kg <kg>  --  Converts kilograms to stone
+stone ounce <ounce>  --  Converts ounces to stone
+ounce lbs <lbs>  --  Converts pounds to ounces
+ounce kg <kg>  --  Converts kilograms to ounces
+ounce stone <stone>  --  Converts stone to ounces
+
+
+
+//CRYPTO//
+
+crypto <coin>  --  Displays the current price of the desired cryptocurrency
+txid/transaction <txid>  --  Get information about a bitcoin transaction
+subscribe <txid>  --  Subscribe to a bitcoin transaction for one confirmation
+
+
+
+//DICTIONARY//
+
+define/definition <word>  --  Retrieve the definition of the desired word using the Merriam Webster dictionary
+ud/urban <word>  --  Retrieve the definition of a word from the Urban dictionary
+antonym <word>  --  Retrieve antonyms for the desired word
+synonym <word>  --  Retrieve synonyms for the desired word
+
+
+
+//EMBED//
+
+embedcode  --  Guides you through the creation of an embed, which you can then use for other commands
+
+
+
+//STICKERS AND EMOJIS//
+
+sticker add <name> <image_attachment>  --  Adds the attached image to the guilds stickers
+sticker remove <sticker>  --  Deletes the sticker from the guild
+sticker name <name> <sticker>  -- Changes the name of a sticker to the desired name
+sticker steal <sticker>  --  Adds another guilds sticker to the guild
+sticker download <sticker>  --  Sends a download link for the sticker
+emoji add <name> <image_attachment>  --  Adds the attached image to the guilds emojis
+emoji remove <emoji>  --  Deletes the emoji from the guild
+emoji name <name> <emoji>  -- Changes the name of an emoji to the desired name
+emoji steal <emoji>  --  Adds another guilds emoji to the guild
+emoji enlarge <emoji>  --  Generate a larger version of the emoji as a PNG file
+sticker download <sticker>  --  Sends a download link for the sticker
+
+
+
+//FILTER//
+
+filter text  --  Toggle if the filter is activated in text channels or not
+filter names -- Toggle if nicknames are filtered or not
+filter boosterroles  --  Toggle if booster role names are filtered or not
+filter add <words>  --  Adds words to the filter
+filter add includes <words>  --  Adds words to the filter, but instead of deleting them as separate words, they will be deleted if included in words
+filter delete <words>  --  Deletes words from the filter
+filter list  --  Displays a list of all filtered words in the guild
+
+
+
+//ROLEPLAY//
+
+marry [member]  --  Request to marry the desired member
+divorce  --  Divorce your current spouse
+married  --  Display the user you are married to and how long for
+clap  --  Send a GIF of you clapping
+cry  --  Send a GIF of you crying
+laugh  --  Send a GIF of you laughing
+smile  --  Send a GIF of you smiling
+fight [member]  --  Send a GIF of you fighting the desired member
+hug [member]  --  Send a GIF of you hugging the desired member
+kiss [member]  --  Send a GIF of you kissing the desired member
+lick [member]  --  Send a GIF of you licking the desired member
+pat [member]  --  Send a GIF of you patting the desired member
+slap [member]  --  Send a GIF of you slapping the desired member
+tickle [member]  --  Send a GIF of you tickling the desired member
+cuddle [member]  --  Send a GIF of you cuddling the desired member
+bite [member]  --  Send a GIF of you biting the desired member
+feed [member]  --  Send a GIF of you feeding the desired member
+poke [member]  --  Send a GIF of you poking the desired member
+
+
+
+//UTILITY//
+
+tts <sentence>  --  Convert text to an audio file
+transcribe <audio_file>  --  Convert an audio file to text
+ocr <image>  --  Perform Optical Character Recognition on an image file, converting it to text
+transparent <image>  --  Remove the background of an image
+shazam <audio_file>  --  Utilize Shazam to find the music inside of an audio file
+gif <quality> <fps> <video_file>  --  Create a GIF of a video file
+autotranscribe  --  Toggle auto transcription for audio files on or off
+remind/reminder/remindme <duration> <message>  --  Remind yourself of something after the desired duration
+
+
+
+
+//FUN//
+
+speak <sentence>  --  Convert text to audio and play it in the voice channel you are in
+react <emoji>  --  React with an emoji to the message you are replying to
+
+
+
+//SEARCH//
+# ani/anime #
+# instagram/ig #
+# twitter/x #
+
+search <query>  --  Search for something using Google
+img <query>  --  Search for images using Google
+reverse <image>  --  Reverse search an image using Google
+safesearch toggle  --  Toggle safesearch on or off for the Google commands
+instagram <user>  --  Retrieve the information about the desired Instagram user
+instagram story <user>  --  Retrieve the stories on the desired Instagram users profile
+instagram highlights <user>  --  Retrieve the highlights on the desired Instagram users profile
+instagram post <user> <amount>  --  Retrieve the posts on the desired Instagram users profile
+instagram feed add <channel> <user>  --  Create an automatic feed on a channel to send new Instagram posts and stories to of the desired user
+instagram feed remove <channel> <user>  --  Remove an automatic feed on a channel of the desired user
+instagram feed list  --  List all current Instagram feeds in the guild
+instagram feed reset  --  Remove all current Instagram feeds in the guild
+minecraft/mc <user>  --  Retrieve the information about the desired Minecraft user
+steam <user>  --  Retrieve the information about the desired Steam user
+twitter <user>  --  Retrieve the information about the desired Twitter user
+twitter post <user> <amount> --  Retrieve the tweets on the desired Twitter users profile
+twitter feed add <channel> <user>  --  Create an automatic feed on a channel to send new Twitter tweets of the desired user
+twitter feed remove <channel> <user>  --  Remove an automatic feed on a channel of the desired user
+twitter feed list  --  List all current Twitter feeds in the guild
+twitter feed reset  --  Remove all current Twitter feeds in the guild
+pinterest <user>  --  Retrieve the information about the desired Pinterest user
+pinterest post <user> <amount> --  Retrieve the posts on the desired Pinterest users profile
+pinterest feed add <channel> <user>  --  Create an automatic feed on a channel to send new Pinterest posts of the desired user
+pinterest feed remove <channel> <user>  --  Remove an automatic feed on a channel of the desired user
+pinterest feed list  --  List all current Pinterest feeds in the guild
+pinterest feed reset  --  Remove all current Pinterest feeds in the guild
+osu <user>  --  Retrieve the information about the desired Osu user
+genshin <user>  --  Retrieve the information about the desired Genshin user
+xbox <user>  --  Retrieve the information about the desired Xbox user
+psn/playstation <user>  --  Retrieve the information about the desired Playstation user
+ani anime <name>  --  Retrieves information about the specified anime using the Anilist API
+ani manga <name>  --  Retrieves information about the specified manga using the Anilist API
+ani character <name>  --  Retrieves information about the specified character using the Anilist API
+ani user <name>  --  Retrieves information about the specified user using the Anilist API
+
+
+
+//GIVEAWAY//
+# giveaway/gw #
+
+giveaway start [channel] <duration> <prize>  --  Start a giveaway
+giveaway end [message_id]  --  End the desired giveaway early
+giveaway reroll [message_id]  --  Reroll the winner of the giveaway
+giveaway entrants [message_id]  --  Display a list of participants of the giveaway
+giveaway list  --  List all current giveaways in the guild
+
+
+
+//INVITE TRACKER//
+
+invites [member]  --  View how many users the desired member has invited
+invites track  --  Toggle whether invites are tracked or not
+invites leaderboard  --  View a leaderboard of which guild members have invited the most people
+invites reset  --  Reset all tracked invites in the guild
+
+
+
+//JAIL//
+
+jail setup  --  Set up the jail system
+jail expire <duration>  --  Set a duration that members are jailed for (0 for permanent)
+jail purge  --  Toggle whether the jail channel is automatically purged when a member is unjailed or not
+jail [member]  --  Jail the desired member
+unjail [member]  --  Unjail the desired member
+
+
+
+//LOCK//
+
+lock  --  Locks the channel so that regular members are unable to type
+unlock  --  Unlocks the channel so that regular members are able to type
+lockdown  --  Locks all channels in the guild so that regular members are unable to type
+unlockdown  --  Unlocks all channels in the guild so that regular members are unable to type
+
+
+
+//PURGE//
+# purge/p/clear/clr/c #
+
+purge <amount>  --  Purge the desired amount of messages in the channel
+purge bot <amount>  --  Purge the desired amount of messages that were sent by bots in the channel
+purge link <amount>  --  Purge the desired amount of messages that include links in the channel
+purge image <amount>  --  Purge the desired amount of messages that include images in the channel
+purge invite <amount>  --  Purge the desired amount of messages that include invites in the channel
+purge self <amount>  --  Purge the desired amount of your own messages
+
+
+
+//VOICE//
+# voice/vc/vm #
+
+> moderation
+    voice ban [member]  --  Ban a member from connecting to voice channels in the guild
+    voice unban [member]  --  Unban a member from connecting to voice channels in the guild
+    voice unban all  --  Unban all currently voice banned users from connecting to voice channels
+    voice banned [member]  --  Check if a member is banned from connecting to voice channels in the guild
+    voice kick [member]  --  Kicks a member from the current voice channel
+    voice mute [member]  --  Mutes a member in the current voice channel
+    voice deafen [member]  --  Deafens a member in the current voice channel
+> voicemaster
+    voice setup  --  Sets up the voicemaster for the guild
+    voice channel [channel]  --  Manually set the voicemaster channel for people to be moved from
+    voice category [category]  --  Manually set the category for voicemaster channels to be created in
+    voice owner  --  View who owns the voicemaster channel you are currently in
+    voice claim  --  Claims the voicemaster channel as your own to run commands in if the original owner has left
+    voice limit <amount>  --  Set a limit for how many people can join your voicemaster channel
+    voice lock  --  Locks your voicemaster channel so that no more members can join
+    voice unlock  --  Unlocks your voicemaster channel so that members can join
+    voice name <name>  --  Set a new name for your voicemaster channel
+    voice reject [member]  -- Reject a member from joining your voicemaster channel regardless of if it is open or not
+    voice permit [member]  --  Permit a member to join your voicemaster channel regardless of if it is locked or not
+    voice transfer [member]  --  Transfer owner of your voicemaster channel to another member
+    voice ghost [member]  --  Disallow a member from viewing your voicemaster channel
+    voice unghost [member]  --  Allow a member to view your voicemaster channel
+    voice region <region>  --  Set the region for your voicemaster channel
+    voice default name <name>  --  Set a default name for your voicemaster channels
+    voice default limit <limit>  --  Set a default limit for your voicemaster channels
+    voice default region <region>  --  Set a default region for your voicemaster channels
+
+
+
+
+//MODERATION//
+
+ban [member] <reason>  --  Ban the desired member from the guild
+unban [user] <reason>  --  Unban the desired user from the guild
+unban all  --  Unban all currently banned users from the guild
+banned [user]  --  Check if a user is banned from the guild, which if they are, display the reason
+kick [member] <reason>  --  Kicks the desired member from the guild
+kick unverified  --  Kick all members of which do not have atleast 1 role
+
+
+
+//NICKNAMES//
+
+nick/nickname/n [member] <name>  --  Set a nickname for the desired member
+resetnick/resetnickname/rn [member]  --  Reset the nickname of the desired member
+resetnickall/resetnicknameall/rna  --  Reset the nickname for all members of the guild
+forcenick/forcenickname/fn [member] <name>  --  Forcefully sets a nickname for the desired member which can not be changed
+unforcenick/unforcenickname/unfn [member]  --  Stops forcing the nickname for the desired member
+
+
+
+//BOOSTER ROLE//
+
+boosterrole/br
+boosterrole toggle  --  Toggle whether members which boost the server can create their own custom booster role
+boosterrole hoisted  --  Toggle whether booster roles can be hoisted or not
+boosterrole set <role>  --  Set a parent role to the booster roles, meaning that all booster roles will be created below it
+boosterrole add <name>  --  Create your own booster role with the desired name
+boosterrole remove  --  Delete your own booster role
+boosterrole color/colour <hex_code>  --  Set the color for your booster role
+boosterrole icon <emoji>  --  Set the icon for your booster role_name
+boosterrole hoist  --  Toggle whether your booster role is hoisted or not
+
+
+
+//POLL//
+
+poll/vote
+poll start <duration> <question>  --  Start a poll
+poll end <message_id>  --  End a poll early
+
+
+
+//AUTO RESPOND//
+
+autoreact/are
+autoreply/autorespond/arp
+autoreact add <emoji> <word>  --  Add an automatic reaction to when a word is sent
+autoreact remove <emoji> <word>  --  Delete an automatic reaction that has been created
+autoreact list  --  List all automatic reactions in the guild
+autoreact reset  --  Delete all automatic reactions in the guild
+
+    </pre>
+</body>
+</html>
