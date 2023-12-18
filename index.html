@@ -1,240 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charSet="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1181624571309326346/1184542280242176110/6d8ea0cc7e436621bbbfe687f6c5c0c4.jpg?ex=658c59f7&is=6579e4f7&hm=5a7b9ad8860441ba70f1e62ca1dd06704b575b6609680eb60356943398b10947" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lune</title>
-    <meta name="robots" content="index,follow" />
-    <meta name="description" content="a multipurpose discord bot giving you the resources to create a unique community" />
-    <meta name="twitter:card" content="player cards" />
-    <meta name="twitter:site" content="https://lunebot.wtf" />
-    <meta property="og:title" content="lune" />
-    <meta content="#4b1218" data-react-helmet="true" name="theme-color">
-    <meta property="og:description" content="a multipurpose discord bot giving you the resources to create a unique community" />
-    <meta property="og:url" content="https://lunebot.wtf" />
-    <meta property="og:image" content="https://cdn.discordapp.com/attachments/1181624571309326346/1184542280242176110/6d8ea0cc7e436621bbbfe687f6c5c0c4.jpg?ex=658c59f7&is=6579e4f7&hm=5a7b9ad8860441ba70f1e62ca1dd06704b575b6609680eb60356943398b10947&" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="500" />
-    <meta property="og:image:height" content="500" />
-    <meta property="og:locale" content="en" />
+    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1181624571309326346/1184542280242176110/6d8ea0cc7e436621bbbfe687f6c5c0c4.jpg?ex=658c59f7&is=6579e4f7&hm=5a7b9ad8860441ba70f1e62ca1dd06704b575b6609680eb60356943398b10947&" />
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: black; 
-            color: white;
+            background-image: url('https://cdn.discordapp.com/attachments/1185277123569664222/1186348990283923497/522d3c4cda20b1c7cf63977aba0903e7_1.png');
+            background-size: cover;
+            backdrop-filter: blur(20px);
+            color: #fff; 
+            font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
         }
-        pre {
-            white-space: pre-wrap;
-            font-size: 14px;
+
+        h1 {
+            font-size: 50px;
+            margin-bottom: 4px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin: 0;
+            font-weight: lighter; 
+            text-align: center;
+        }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1px;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 15px; 
+            font-size: 1em;
+            text-decoration: none;
+            color: #fff;
+            margin: 15px;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            border-radius: 5px;
+            border: 1px solid #888; 
+            position: relative;
+            z-index: 2;
+        }
+
+        .commands-button {
+            background-color: rgba(0, 0, 0, 0.7); 
+            border-color: #636363;
+        }
+
+        .discord-button {
+            background-color: #3994ff; 
+        }
+
+        .button:hover {
+            background-color: rgba(66, 0, 0, 0.5);
+        }
+
+        .button img {
+            width: 20px; 
+            height: 20px; 
+            margin-right: 5px;
         }
     </style>
 </head>
 <body>
-    <pre>
-Support @ https://discord.gg/lunebot
-Default Prefix: ; | [] = Required, <> = Optional
-
-
-┌── automod
-|    ├──  filter[f]: 
-|    |   ├── filter unwhitelist[uwl]: Remove channels & users from filters
-|    |   ├── filter unwhitelist channel: Unwhitelist a channel from filters
-|    |   ├── filter unwhitelist user: Unwhitelist someone from filters
-|    |   ├── filter list: Shows all blacklisted words
-|    |   ├── filter remove: Remove a word from filters
-|    |   ├── filter add: Filter a word
-|    |   ├── filter whitelisted: Shows all whitelisted users & channels
-|    |   ├── filter whitelisted channels: Shows all whitelisted channels
-|    |   ├── filter whitelisted users: Shows all whitelisted users
-|    |   ├── filter whitelist[wl]: Manage whitelists for filter
-|    |   ├── filter whitelist channel: Whitelist channels to filters
-|    |   ├── filter whitelist user: Whitelist someone to filters
-|    ├──  antispam: 
-|    |   ├── antispam whitelist[wl]: Manage whitelists for AntiInvite
-|    |   ├── antispam whitelist channel: Whitelist a channel from AntiSpam
-|    |   ├── antispam whitelist user: Whitelist an user from AntiSpam
-|    |   ├── antispam whitelisted: Show all whitelisted users & channels
-|    |   ├── antispam whitelisted channels: Show all whitelisted channels
-|    |   ├── antispam whitelisted users: Show all whitelist users
-|    |   ├── antispam disable: Disable AntiSpam
-|    |   ├── antispam seconds: Set AntiSpam delay
-|    |   ├── antispam limit: Set the limit for AntiSpam
-|    |   ├── antispam unwhitelist[uwl]: Unwhitelist channels or users from AntiSpam
-|    |   ├── antispam unwhitelist channel: Unwhitelist a channel from AntiSpam
-|    |   ├── antispam unwhitelist user: Unwhitelist a user from AntiSpam
-|    |   ├── antispam punishment: Set ANtiSpam punishment
-|    |   ├── antispam enable[e]: Enable AntiSpam
-|    ├──  anti-invite[antiinvite]: 
-|    |   ├── anti-invite unwhitelist[uwl]: Unwhitelist users or channels from AntiInvite
-|    |   ├── anti-invite unwhitelist channel: Unwhitelist a channel from AntiInvite
-|    |   ├── anti-invite unwhitelist user: Unwhitelist a user from AntiInvite
-|    |   ├── anti-invite enable[e]: Enable AntiInvite
-|    |   ├── anti-invite whitelist[wl]: Manage whitelists for AntiInvite
-|    |   ├── anti-invite whitelist channel: Whitelist a channel from AntiInvite
-|    |   ├── anti-invite whitelist user: Ahitelist an user from AntiInvite
-|    |   ├── anti-invite whitelisted: Show all whitelisted users and channels
-|    |   ├── anti-invite whitelisted channels: Show all whitelisted channels
-|    |   ├── anti-invite whitelisted users: Show all whitelisted users
-|    |   ├── anti-invite disable[d]: Disable AntiInvite
-┌── chats
-|    ├──  autoresponder[ar]: 
-|    |   ├── autoresponder list: Show all autoresponders
-|    |   ├── autoresponder remove: Remove a autoresponder
-|    |   ├── autoresponder add: Add a autoresponder
-|    ├──  autoreact: 
-|    |   ├── autoreact list: Show all autoreactions
-|    |   ├── autoreact add: Setup autoreact
-|    |   ├── autoreact remove: Remove autoreactions
-┌── emoji
-|    ├──  deleteemoji[delemoji]: Delete an emoji
-|    ├──  addemoji[steal]: Add an emoji
-|    ├──  addmultiple[am]: Add multiple emojis
-|    ├──  sticker: Manage the servers stickers
-|    |   ├── sticker delete: Delete a sticker
-|    |   ├── sticker enlarge[e|jumbo]: Show enlarged sticker
-|    |   ├── sticker steal[add]: Add a sticker
-|    ├──  stealsticker[stickersteal|addsticker|stickeradd]: Add a sticker to the server
-|    ├──  emojilist[emojis]: Shows all server emojis
-|    ├──  enlarge[downloademoji|e|jumbo]: Enlarge Emoji
-┌── system
-|    ├──  boost: 
-|    |   ├── boost message: Configure the boost message
-|    |   ├── boost test: Test boost module
-|    |   ├── boost config: Show the config for boost message
-|    |   ├── boost delete: Disable boost module
-|    |   ├── boost channel: Configure the boost channel
-|    ├──  leave: 
-|    |   ├── leave test: Test leave module
-|    |   ├── leave message: Configure the leave message
-|    |   ├── leave config: Show the config of leave message
-|    |   ├── leave delete: Disable the leave module
-|    |   ├── leave channel: Configure the leave channel
-|    ├──  welcome[welc]: 
-|    |   ├── welcome config: Show config of welcome message
-|    |   ├── welcome test: Test welcome module
-|    |   ├── welcome message: Configure the welcome message
-|    |   ├── welcome delete: Disable the welcome module
-|    |   ├── welcome channel: Configure the welcome channel
-┌── joindm
-|    ├──  joindm: Manage direct messages to a user on join
-|    |   ├── joindm add: Add a message that sends to user when they join
-|    |   ├── joindm test: Test JoinDM
-|    |   ├── joindm remove: Remove the JoinDM
-┌── moderation
-|    ├──  unsetme: Disable moderation in your server
-|    ├──  setme: Enable moderation in your server
-|    ├──  hardban: HardBan someone from the server
-|    ├──  hardunban: Un-HardBan someone from the server
-|    ├──  nuke: Delete & Clone a channel
-|    ├──  nickname[setnick|nick]: change an user's nickname
-|    ├──  forcenick[locknick]: Force a users nickname
-|    ├──  kick: Kick someone from your server
-|    ├──  ban: Ban someone from your server
-|    ├──  mute[timeout]: Mute someone in your server
-|    ├──  unban: Unban someone in your server
-|    ├──  softban: Ban someone then instantly unban them
-|    ├──  unmute[untimeout]: Unmute someone in your server
-|    ├──  voicemute[vcmute]: Mute someone in a voice channel 
-|    ├──  voiceunmute[vcunmute]: Unmute someone in a voice channel
-|    ├──  clear: 
-|    |   ├── clear contains: Clear certain messages with word contained in it
-|    ├──  purge[p]: Purge messages
-|    ├──  botpurge[bc|botclear]: Bulk delete bot messages
-|    ├──  warn: 
-|    |   ├── warn list: Show warns of someone
-|    |   ├── warn clear: Remove all warns from someone
-|    ├──  warns: Show all warns of someone
-|    ├──  jail: Jail someone
-|    ├──  unjail: Unjail someoje
-|    ├──  slowmode[sm]: Add slowmode to a channel
-|    ├──  lock: Lock a channel
-|    ├──  unlock: Unlock a channel
-|    ├──  role[r]: Manage roles
-|    |   ├── role remove: remove a role from a member
-|    |   ├── role add: Add a role to someone
-|    |   ├── role edit: edit a role
-|    |   ├── role edit color: Change a roles color
-|    |   ├── role edit name: Change a roles name
-|    |   ├── role edit hoist: Make a role hoisted or not
-|    |   ├── role edit icon: Change a roles icon
-|    |   ├── role edit position[pos]: Change a roles position
-|    |   ├── role delete: Delete a role
-|    |   ├── role humans: mass add or remove roles from members
-|    |   ├── role humans add: Add a role to all humans
-|    |   ├── role humans remove: Remove a role from all humans
-|    |   ├── role restore: Restore someones roles
-|    |   ├── role bots: mass add or remove roles from members
-|    |   ├── role bots remove: Remove a role from all bots
-|    |   ├── role bots add: Add a role to all bots
-|    |   ├── role all: mass add or remove roles from members
-|    |   ├── role all remove: Remove a role from all members
-|    |   ├── role all add: Add a role to all members
-|    |   ├── role create: Create a role
-┌── utility
-|    ├──  clearsnipes[cs]: Clear **ALL** snipe data
-|    ├──  seen: Check if I saw a member
-|    ├──  afk: Show AFK Status
-|    ├──  editsnipe[es]: Snipe the most recent edited message
-|    ├──  reactionsnipe[rs]: Snipe the most recent removed reaction
-|    ├──  snipe[s]: Snipe the latest deleted message
-|    ├──  membercount[mc]: View the current membercount
-|    ├──  avatar[av]: See user's avatar
-|    ├──  serveravatar[sav]: See user's avatar
-|    ├──  roleinfo[ri]: See role information
-|    ├──  inrole: See all members in a role
-|    ├──  joins: See all members joined today
-|    ├──  muted: See all muted mebmers
-|    ├──  bans: See all banned users
-|    ├──  boosters: See people who are boosting the server
-|    |   ├── boosters lost: Show boosters lost
-|    ├──  roles: See all roles in the server
-|    ├──  bots: See all bots in the server
-|    ├──  userinfo[whois|ui|user]: Show user information
-|    ├──  serverbanner[guildbanner]: Get the servers banner
-|    ├──  servericon[guildicon|guildavatar]: Get the servers icon
-|    ├──  serversplash[guildsplash]: Get the servers splash
-|    ├──  serverinfo[si]: show information about the server
-|    ├──  sbanner: Gets the banner of a server
-|    ├──  splash: Gets the splash of a server
-|    ├──  sicon: Gets the icon of a server
-|    ├──  firstmessage[firstmsg]: Grab the first message in a channel
-|    ├──  picperms: Give somebody picture permissions
-┌── config
-|    ├──  selfprefix: Set your own prefix
-|    ├──  pingonjoin[poj]: 
-|    |   ├── pingonjoin list: List all of your ping on join channels
-|    |   ├── pingonjoin add: Ping new members in a certain channel once they join
-|    |   ├── pingonjoin remove: Remove a channel from ping on join
-|    ├──  autorole: 
-|    |   ├── autorole list: List all the roles being added to new joining members
-|    |   ├── autorole add: Add a role to new joining members
-|    |   ├── autorole remove: Remove a role from being added to new joining members
-|    ├──  disablecommand[dcmd]: Disable a command in your server
-|    ├──  enablecommand[ecmd]: config
-|    ├──  prefix: Change the **guild** prefix
-┌── fun
-|    ├──  urban: Define a word on urbandictionary
-|    ├──  tictactoe[ttt]: Play TicTacToe
-┌── info
-|    ├──  uptime: Check how long Lune has been up for
-|    ├──  botinfo[about|info|bi|sys]: Show Bot Information
-|    ├──  ping: Check the bots connection
-|    ├──  invite[support|inv]: Invite Lune
-|    ├──  christmas[xmas]: 
-┌── roleplay
-|    ├──  kiss: Kiss an user
-|    ├──  cuddle: Cuddle an user
-|    ├──  hug: Hug an user
-|    ├──  pat: Pat an user
-|    ├──  slap: Slap an user
-|    ├──  laugh: Start laughing
-|    ├──  cry: Start crying
-|    ├──  marry: Marry a user
-|    ├──  marriage: Check an user's marriage
-|    ├──  divorce: Divorce with an user
-    </pre>
+    <h1>Create a unique community, using lune.</h1>
+    <h2>Used in <strong>50+</strong> servers</h2>
+    <div class="mt-10 flex items-center justify-center gap-4 button-container">
+        <a class="button commands-button" href="/commands">
+            <img src="https://cdn.discordapp.com/attachments/1185277123569664222/1186349648743510118/command-line_1.png?ex=6592ed35&is=65807835&hm=9a08d261a93c49a0de69a1af7870a4936667b0b8f62545dc64efcb8e0190ed4e&" alt="Icon"> <!-- Replace with your image URL -->
+            Explore commands
+        </a>
+        <a class="button discord-button" href="https://discord.com/api/oauth2/authorize?client_id=1185273817069781002&permissions=8&scope=bot">
+            <img src="https://cdn.discordapp.com/attachments/1185277123569664222/1186349535413407886/discord_1.png?ex=6592ed1a&is=6580781a&hm=3a6e5617012c9cf86bb1b8c345e88b0a1f7688bb1f2dc610691cabb15b72d271&" alt="Icon"> <!-- Replace with your image URL -->
+            Add to Discord
+        </a>
+    </div>
 </body>
 </html>
