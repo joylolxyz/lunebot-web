@@ -1,53 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charSet="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="shortcut icon" href="https://lunebot.wtf/img/pfp.png" />
-    <title>Lune - Privacy</title>
+    <title>lune / policy</title>
     <meta name="robots" content="index,follow" />
-    <meta name="description" content="Privacy for lune - privacy@lunebot.wtf" />
+    <meta name="description" content="A simplistic, fast, and user-friendly discord bot helping you manage your servers, one at a time." />
     <meta name="twitter:card" content="player cards" />
     <meta name="twitter:site" content="https://lunebot.wtf" />
-    <meta property="og:title" content="Lune - Privacy" />
-    <meta content="#091aee" data-react-helmet="true" name="theme-color">
-    <meta property="og:description" content="Privacy for lune - privacy@lunebot.wtf" />
+    <meta property="og:title" content="lune" />
+    <meta content="#ffc0cf" data-react-helmet="true" name="theme-color">
+    <meta property="og:description" content="A simplistic, fast, and user-friendly discord bot helping you manage your servers, one at a time." />
     <meta property="og:url" content="https://lunebot.wtf" />
-    <meta property="og:image" content="https://lunebot.wtf/img/pfp.png" />
+    <meta property="og:image" content="https://lunebot.wtf/img/newpfp.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="500" />
     <meta property="og:locale" content="en" />
+    <link rel="shortcut icon" href="https://lunebot.wtf/img/newpfp.png">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: black; 
+            margin: 0;
+            overflow: auto;
+            background-color: black;
+            color: white;
+            font-family: 'system-ui', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #000000;
+            padding: 8px;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid #2b2d31;
+            z-index: 2;
+        }
+
+        nav header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1024px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        nav header a {
+            text-decoration: none;
             color: white;
         }
-        pre {
-            white-space: pre-wrap;
-            font-size: 14px;
+
+        nav img {
+            width: 40px;
+            height: auto;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            font-weight: light;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 10px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: transparent;
+            border-radius: 8px;
+            box-shadow: none;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 1rem;
+            font-weight: normal;
+            text-align: justify;
+            color: rgb(255, 255, 255);
         }
     </style>
 </head>
+
 <body>
-    <pre>
-    Support @ https://discord.gg/lunehq
+    <nav>
+        <header>
+            <div>
+                <a href="/">
+                    <img src="https://lunebot.wtf/img/newpfp.png" alt="avatar">
+                </a>
+            </div>
+            <ul>
+                <li><a href="https://discord.gg/d22ySSJAzt">Support</a></li>
+                <li><a href="https://discord.com/api/oauth2/authorize?client_id=1188210204995764304&permissions=8&scope=bot">Invite</a></li>
+            </ul>
+        </header>
+    </nav>
 
-    By engaging in or participating in a shared guild with the "lune" bot, you hereby acknowledge and agree to the privacy policy displayed on this page.
+    <main>
+        <h1>Privacy Policy</h1>
+        <h2>Information We Collect:</h2>
+        <p>
+            <strong>User Data:</strong> When you use the Bot in your Discord server, we may collect certain user data, including but not limited to Discord user IDs, usernames, and messages sent through the Bot's commands.
+        </p>
+        <p>
+            <strong>Server Data:</strong> The Bot may collect information about your Discord server, such as server ID, server name, and server settings relevant to the functioning of the Bot.
+        </p>
+        <p>
+            <strong>Usage Data:</strong> We may collect anonymous usage data, such as command usage statistics, to improve the Bot's performance and features.
+        </p>
 
-    Data Collected:
-    Guild IDs, guild names, channel IDs, channel Names, role IDs, role names, usernames, nicknames, user IDs, deleted and edited messages (up to two hours), executed commands
-    
-    Data Usage:
-    The collection of this data primarily serves the usage of our bot. Without this data, the bot wouldn't be unable to effectively process a majority of commands. 
-    Additionally, some data is retained to view the execution of commands. It is crucial to know that your data will not be, and never has been used for malicious purposes, 
-    nor will it be shared with anyone except the authorized bot owners.
-    
-    Data Removal:
-    If you wish to have any of your data removed, contact us at https://discord.gg/lunehq with specific details about what you would like removed.
-    </pre>
+        <h2>How We Use Your Information:</h2>
+        <p>
+            We use the collected user data to provide and improve the functionality of the Bot's services and to respond to user inquiries or support requests.
+        </p>
+        <p>
+            Server data is used to personalize and optimize the Bot's behavior within your Discord server.
+        </p>
+        <p>
+            Anonymous usage data helps us analyze trends and usage patterns to enhance the Bot's performance.
+        </p>
+
+        <h2>Data Sharing and Disclosure:</h2>
+        <p>
+            We do not sell, trade, or rent your personal information to third parties.
+        </p>
+        <p>
+            We may share the collected information with our service providers and partners who assist us in operating, maintaining, and improving the Bot. These third parties are obligated to protect your information and use it only for the purposes specified by us.
+        </p>
+        <p>
+            We may disclose your information if required by law or in response to a valid legal request from law enforcement or other governmental authorities.
+        </p>
+
+        <h2>Data Retention:</h2>
+        <p>
+            We will retain your information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.
+        </p>
+
+        <h2>Data Security:</h2>
+        <p>
+            We implement reasonable security measures to protect your information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.
+        </p>
+
+        <h2>Children's Privacy:</h2>
+        <p>
+            The Bot is not intended for use by children under the age of 13. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us, and we will take appropriate measures to remove the information from our records.
+        </p>
+
+        <h2>Changes to the Privacy Policy:</h2>
+        <p>
+            We may update or revise this Privacy Policy from time to time. Any changes will be effective upon posting the updated Privacy Policy, and your continued use of the Bot after the changes shall constitute your acceptance of the revised Privacy Policy.
+        </p>
+    </main>
 </body>
+
 </html>
