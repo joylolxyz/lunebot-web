@@ -2,13 +2,60 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preload" href="/_next/static/media/c9a5bc6a7c948fb0-s.p.woff2" as="font" crossorigin="" type="font/woff2" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lune</title>
+    <link rel="shortcut icon" href="https://lunebot.wtf/img/newpfp.png">
     <style>
         body {
             margin: 0;
+            overflow: auto;
+            background-color: black;
+            color: white;
             font-family: 'system-ui', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        nav {
+            background-color: #000000;
+            padding: 8px; 
+            width: 100%;
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid #2b2d31;
+            z-index: 2;
+        }
+
+        nav header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1024px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        nav header a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav img {
+            width: 40px; 
+            height: auto;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            font-weight: light;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 10px;
         }
 
         main {
@@ -17,121 +64,193 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            position: relative;
-            background-image: url('https://lunebot.wtf/img/bg.png');
-            background-size: cover;
-            background-position: center;
-            overflow: hidden;
-        }
-
-        main::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: inherit;
-            filter: blur(10px); 
-        }
-
-        section {
-            max-width: 38rem;
-            padding: 2rem;
-            text-align: center;
+            padding-top: 20px;
             position: relative;
             z-index: 1;
-            color: #ffffffea;
         }
 
         h1 {
-            font-size: 3.6rem;
+            margin-bottom: 10px;
+            font-size: 2.7rem;
             font-weight: bold;
-            line-height: 1.1;
-            margin-bottom: 0.5rem;
+            text-align: center;
+            color: rgb(255, 255, 255);
         }
 
-        span {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            display: block;
-            color: #bbb9b9b4
+        p {
+            margin-top: 10px;
+            font-size: 1.3rem;
+            font-weight: normal;
+            text-align: center;
+            color: rgb(255, 255, 255);
         }
 
-        a {
-            display: inline-flex;
+        .gradient-button-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gradient-button {
+            display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 0.375rem;
+            border-radius: 0.30rem;
             text-decoration: none;
-            color: #ffffffea;
-            padding: 0.5rem 1rem;
-            margin: 0.25rem;
+            color: black;
+            padding: 0.75rem 1.5rem;
+            margin: 0.5rem;
+            font-weight: bold;
             transition: background-color 0.3s, color 0.3s;
-            z-index: 1; 
+            z-index: 1;
+            flex: 1;
         }
 
         .commands-button {
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: #FFD9EB;
             border: none;
-            border-radius: 0.5rem; 
+            border-radius: 0.75rem;
+            margin: 0.5rem;
         }
 
         .discord-button {
             background-color: #ffffff;
             color: #000000;
             border: none;
-            border-radius: 0.5rem; 
+            border-radius: 0.75rem;
+            margin: 0.5rem;
         }
 
         .commands-button:hover {
-            background-color: rgba(78, 78, 78, 0.4); 
+            background-color: #FFECF5;
         }
 
         .icon {
-            width: 20px;
-            height: 20px;
+            width: 30px;
+            height: 30px;
             margin-right: 0.5rem;
         }
+
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background: url('https://www.transparenttextures.com/patterns/absurdidad.png');
+            animation: snowfall 15s linear infinite;
+        }
+
+        @keyframes snowfall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        .snowflakes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .snowflake {
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255,192,207, 0.7);
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
     </style>
-    <title>lune</title>
-    <meta name="description" content="A simplistic, fast, and user-friendly discord bot helping you manage your servers, one at a time." />
-    <meta name="keywords" content="discord bot, bleed, haunt, wock, kayo, lune, security bot, discord, discord multipurpose bot, multipurpose" />
-    <meta name="robots" content="noindex, follow, nocache" />
-    <meta name="googlebot" content="index, nofollow, noimageindex" />
-    <meta property="og:title" content="lune" />
-    <meta property="og:description" content="A simplistic, fast, and user-friendly discord bot helping you manage your servers, one at a time." />
-    <meta property="og:url" content="https://lunebot.wtf" />
-    <meta content="#091aee" data-react-helmet="true" name="theme-color">
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:image" content="https://lunebot.wtf/img/pfp.png" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="lune" />
-    <meta name="twitter:description" content="A simplistic, fast, and user-friendly discord bot helping you manage your servers, one at a time." />
-    <meta name="twitter:image" content="https://lunebot.wtf/img/pfp.png" />
-    <link rel="icon" href="https://lunebot.wtf/img/pfp.png" />
 </head>
 
 <body>
-    <main>
-        <section>
-            <h1>Enhance your Discord experience, using lune</h1>
-            <span>A simplistic, fast, and user-friendly discord bot helping you manage your servers, one at a time.</span>
+    <nav>
+        <header>
             <div>
-                <a href="/commands" class="commands-button">
-                    <img class="icon" src="https://lunebot.wtf/img/cmd.png" alt="commands icon">
-                    View Commands
-                </a>
-                <a target="_blank" rel="noreferrer" href="https://discord.com/api/oauth2/authorize?client_id=1188210204995764304&amp;permissions=8&amp;scope=bot" class="discord-button">
-                    <img class="icon" src="https://lunebot.wtf/img/cordicon.png" alt="discord icon">
-                    Add to Discord
+                <a href="/">
+                    <img src="https://lunebot.wtf/img/newpfp.png" alt="avatar">
                 </a>
             </div>
-        </section>
+            <ul>
+                <li><a href="https://discord.gg/d22ySSJAzt">Support</a></li>
+                <li><a href="https://discord.com/api/oauth2/authorize?client_id=1188210204995764304&permissions=8&scope=bot">Invite</a></li>
+            </ul>
+        </header>
+    </nav>
+
+    <main>
+        <h1>Enhance your Discord experience, using lune.</h1>
+        <p>A simplistic, fast, and user-friendly Discord bot helping you manage your servers, one at a time.</p>
+
+        <div class="gradient-button-container">
+            <a href="/commands" class="gradient-button commands-button">
+                <img class="icon" src="https://lunebot.wtf/img/cmdblack.png" alt="commands icon">
+                View Commands
+            </a>
+            <a target="_blank" rel="noreferrer" href="https://discord.com/api/oauth2/authorize?client_id=1188210204995764304&permissions=8&scope=bot" class="gradient-button discord-button">
+                <img class="icon" src="https://lunebot.wtf/img/cordicon.png" alt="discord icon">
+                Add to Discord
+            </a>
+        </div>
     </main>
 
-    <script src="/_next/static/chunks/webpack-6bd9c40f8b1a755c.js" crossorigin="" async=""></script>
+    <div class="snowflakes"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const createSnowflake = () => {
+                const snowflake = document.createElement('div');
+                const snowflakesContainer = document.querySelector('.snowflakes');
+
+                snowflake.className = 'snowflake';
+                snowflake.innerHTML = '❄';
+                snowflake.style.left = `${Math.random() * window.innerWidth}px`;
+                snowflake.style.top = '0';
+                snowflakesContainer.appendChild(snowflake);
+
+                const fall = () => {
+                    const currentY = parseFloat(getComputedStyle(snowflake).top);
+                    const newY = currentY + 2;
+
+                    if (newY > window.innerHeight) {
+                        snowflake.remove();
+                    } else {
+                        snowflake.style.top = `${newY}px`;
+                        requestAnimationFrame(fall);
+                    }
+                };
+
+                requestAnimationFrame(fall);
+            };
+
+            const isPageVisible = () => !document.hidden;
+
+            const createSnowflakesIfVisible = () => {
+                if (isPageVisible()) {
+                    for (let i = 0; i < 5; i++) {
+                        createSnowflake();
+                    }
+                }
+            };
+
+            setInterval(createSnowflakesIfVisible, 500);
+        });
+    </script>
 </body>
 
 </html>
