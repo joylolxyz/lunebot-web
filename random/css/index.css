@@ -126,6 +126,6 @@ body, html {
     color: #1a1a1a;
 }
 
-.buttons-container button:hover[data-gif="https://www.pokencyclopedia.info/sprites/gen5/ani_black-white/ani_bw_094.gif"] {
+.buttons-container button:hover[data-gif="gengar.gif"] {
     color: rgba(162, 131, 193, 1);
 }
