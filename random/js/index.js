@@ -75,36 +75,7 @@ function getRandomSentence() {
 }
 
 var gifs = [
-    "alakazam.gif",
-    "arceus.gif",
-    "articuno.gif",
-    "charizard.gif",
-    "darkrai.gif",
-    "dialga.gif",
-    "dragonite.gif",
-    "entei.gif",
-    "garchomp.gif",
-    "gardevoir.gif",
-    "genesect.gif",
-    "gengar.gif",
-    "giratina.gif",
-    "groudon.gif",
-    "ho-oh.gif",
-    "kyogre.gif",
-    "kyurem.gif",
-    "lugia.gif",
-    "mewtwo.gif",
-    "moltres.gif",
-    "palkia.gif",
-    "raikou.gif",
-    "rayquaza.gif",
-    "reshiram.gif",
-    "scizor.gif",
-    "suicune.gif",
-    "tyranitar.gif",
-    "venusaur.gif",
-    "zapdos.gif",
-    "zekrom.gif"
+    "https://www.pokencyclopedia.info/sprites/gen5/ani_black-white/ani_bw_094.gif",
     ];
 
 function setRandomGif() {
