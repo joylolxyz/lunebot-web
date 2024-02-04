@@ -1,0 +1,131 @@
+@font-face {
+    font-family: "Cascadia";
+    src: url('../assets/Cascadia.ttf') format('truetype');
+}
+
+* {
+	font-family: Cascadia;
+	font-weight: medium;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.background {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #050505;
+    z-index: -2;
+}
+
+.ascii-image {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(5.5);
+    z-index: -2;
+}
+
+.full-page-overlay {
+    position: absolute;
+    transition: opacity 1s ease-in-out;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.buttons-container {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-container button {
+    margin: 0 10px;
+    background-color: rgba(5, 5, 5, 0.5);
+    color: #bfbfbf;
+    font-size: 16px;
+    font-weight: 550;
+    border: 0px solid transparent;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 1
+}
+
+.text-container {
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    text-align: left;
+    background-color: rgba(5, 5, 5, 0);
+    z-index: 1
+}
+
+.text-container p {
+    color: #757575;
+    font-size: 14px;
+    margin: 0;
+    word-wrap: break-word;
+}
+
+@media screen and (max-width: 850px) {
+    .text-container {
+        width: 60%;
+        bottom: 5%;
+    }
+    .text-container p {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .text-container {
+        width: 80%;
+        bottom: 5%;
+    }
+    .text-container p {
+        font-size: 11px;
+    }
+    .buttons-container button {
+        font-size: 14px;
+    }
+    .ascii-image {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(3.5);
+    }
+}
+
+#main-container {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.display-text {
+    transition: opacity 1s ease-in-out;
+}
+
+.snowflake {
+    position: absolute;
+    display: block;
+    font-size: 16px;
+    color: #1a1a1a;
+}
+
+.buttons-container button:hover[data-gif="https://www.pokencyclopedia.info/sprites/gen5/ani_black-white/ani_bw_094.gif"] {
+    color: rgba(162, 131, 193, 1);
+}
