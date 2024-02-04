@@ -75,7 +75,7 @@ function getRandomSentence() {
 }
 
 var gifs = [
-    "https://www.pokencyclopedia.info/sprites/gen5/ani_black-white/ani_bw_094.gif",
+    "gengar.gif",
     ];
 
 function setRandomGif() {
