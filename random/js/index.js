@@ -57,7 +57,7 @@ function startAbout() {
     displayText.style.opacity = 0;
 
     setTimeout(() => {
-        displayText.innerHTML = "This website is owned by joyclen, and will likely be used for projects that are currently in the works or planned, such as discord bots and osint tools. For more information, contact <a href='https://discord.com/users/1057310810440994967' target='_blank' style='color: white;'>joyclens</a> on Discord.";
+        displayText.innerHTML = "This website is owned by joyclen, and will likely be used for projects that are currently in the works or planned, such as discord bots. For more information, contact <a href='https://discord.com/users/1057310810440994967' target='_blank' style='color: white;'>joyclens</a> on Discord.";
         displayText.style.opacity = 1;
         transitionActive = false;
     }, 2000);
