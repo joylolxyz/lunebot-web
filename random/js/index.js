@@ -81,14 +81,12 @@ var gifs = [
 function setRandomGif() {
     var randomIndex = Math.floor(Math.random() * gifs.length);
     var randomGif = gifs[randomIndex];
-    document.getElementById("random-gif").src = "/random/js/" + randomGif;
+    document.getElementById("random-gif").src = "assets/" + randomGif;
 
     document.body.setAttribute("data-current-gif", randomGif);
 
     updateButtonHoverColor();
 }
-
-setRandomGif();
 
 function updateButtonHoverColor() {
     var currentGif = document.body.getAttribute("data-current-gif");
